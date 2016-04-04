@@ -23,7 +23,7 @@
 # #+LATEX_HEADER: \pagestyle{empty}
 # #+LaTeX: \thispagestyle{empty}
 
-# [[http://melpa.org/#/mhc][file:http://melpa.org/packages/otama-badge.svg]]
+[[http://melpa.org/#/otama][file:http://melpa.org/packages/otama-badge.svg]]
 
 * DESCRIPTION
   Otama is a simple org-table based database.
@@ -39,21 +39,27 @@
     + Helm
 
 * INSTALL AND SETUP
-  Setup in your =.emacs=:
+  Otama is now available on [[http://melpa.org/][MELPA]]. If you set up packaging system correctly,
+  you can install otama with package.el (=M-x= =package-install= =otama=).
+  Check [[https://github.com/milkypostman/melpa#usage][MELPA usage]] for details.
+
+  Instead, without MELPA, setup these in your =.emacs=:
   #+BEGIN_SRC emacs-lisp
     (add-to-list
      'load-path
      (expand-file-name "/path/to/directory/where/otama.el/exists"))
 
     (require 'otama)
-
-    (setq otama-database-file-name "/path/to/address-book-file.org")
   #+END_SRC
 
+  Also, you need to setup the location of database in your =.emacs=:
+  #+BEGIN_SRC emacs-lisp
+    (setq otama-database-file-name "/path/to/address-book-file.org")
+  #+END_SRC
   and =M-x otama-helm= will help you to insert address information
   into the current buffer.
 
-  Example for =otama-database-file-name= found at [[https://raw.githubusercontent.com/yoshinari-nomura/otama/master/address-book-sample.org][address-book-sample.org]]
+  Example for =otama-database-file-name= is found at [[https://raw.githubusercontent.com/yoshinari-nomura/otama/master/address-book-sample.org][address-book-sample.org]]
 
   You may want to bind =otama-helm= to a specific key:
   #+BEGIN_SRC emacs-lisp
